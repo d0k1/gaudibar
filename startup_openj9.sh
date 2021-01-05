@@ -1,0 +1,3 @@
+cd /opt/gaudi &&
+sudo -u gaudi nohup /opt/jdk-11.0.10+8/bin/java -server -Xmx512m -Xms250m -Djava.net.preferIPv4Stack=true -Duser.language=ru -Duser.region=RU -Xverify:none -Xshareclasses:name=myCache,cacheDir="/opt/cds",verbose -Xscmx100M -Xaggressive -Xcodecachetotal32m -Xscmaxaot32M -Xcodecache8m -Dcom.ibm.enableClassCaching=true -Xloggc:logs/gc.log.`date '+%Y-%m-%d_%H-%M-%S'` -XX:+PrintGCDetails -Djava.security.egd=file:/dev/urandom -DbindHost=127.0.0.1 -DbindPort=8080 -jar gaudi-1.0-SNAPSHOT-jar-with-dependencies.jar > logs/gaudi.log 2>&1 &
+##-Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.rmi.port=9011 -Djava.rmi.server.hostname=192.168.0.2 -Dcom.sun.management.jmxremote.host=192.168.0.2 -Dcom.sun.management.jmxremote.authenticate=false
