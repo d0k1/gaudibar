@@ -12,13 +12,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Singleton
-public class ChallengeController {
-
+public class SettingsController {
     MessageBundle bundle;
     ViewUtil viewUtil;
 
     @Inject
-    public ChallengeController(MessageBundle bundle, ViewUtil viewUtil) {
+    public SettingsController(MessageBundle bundle, ViewUtil viewUtil) {
         this.bundle = bundle;
         this.viewUtil = viewUtil;
     }
@@ -26,12 +25,12 @@ public class ChallengeController {
     public Handler getIndexPage() {
         Handler handler = (ctx) -> {
             Map<String, Object> model = viewUtil.baseModel(ctx);
-            ctx.render(Path.Template.PILGRIM, model);
+            ctx.render(Path.Template.INDEX, model);
         };
         return handler;
     }
 
-    public Handler getCityInfo(){
+    public Handler getUsers() {
         Handler handler = (ctx) -> {
             ctx.json(new HashMap());
             ctx.status(HttpStatus.OK_200);
@@ -39,7 +38,7 @@ public class ChallengeController {
         return handler;
     }
 
-    public Handler getCities(){
+    public Handler addUser() {
         Handler handler = (ctx) -> {
             ctx.json(new HashMap());
             ctx.status(HttpStatus.OK_200);
@@ -47,11 +46,36 @@ public class ChallengeController {
         return handler;
     }
 
-    public Handler getScore(){
+    public Handler editUser() {
         Handler handler = (ctx) -> {
             ctx.json(new HashMap());
             ctx.status(HttpStatus.OK_200);
         };
         return handler;
     }
+
+    public Handler getCities() {
+        Handler handler = (ctx) -> {
+            ctx.json(new HashMap());
+            ctx.status(HttpStatus.OK_200);
+        };
+        return handler;
+    }
+
+    public Handler addCity() {
+        Handler handler = (ctx) -> {
+            ctx.json(new HashMap());
+            ctx.status(HttpStatus.OK_200);
+        };
+        return handler;
+    }
+
+    public Handler editCity() {
+        Handler handler = (ctx) -> {
+            ctx.json(new HashMap());
+            ctx.status(HttpStatus.OK_200);
+        };
+        return handler;
+    }
+
 }

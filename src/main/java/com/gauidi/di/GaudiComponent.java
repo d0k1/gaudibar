@@ -3,6 +3,7 @@ package com.gauidi.di;
 import com.gauidi.controllers.ChallengeController;
 import com.gauidi.controllers.IndexController;
 import com.gauidi.controllers.LoginController;
+import com.gauidi.controllers.SettingsController;
 import com.gauidi.util.MessageBundle;
 import com.gauidi.util.ViewUtil;
 import dagger.Component;
@@ -17,4 +18,5 @@ public interface GaudiComponent {
     IndexController indexController();
     ChallengeController challengeController();
     LoginController loginController();
+    SettingsController settingsController();
 }
